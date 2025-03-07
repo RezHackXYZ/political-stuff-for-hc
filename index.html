@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Parliament of Hack Club</title>
+        <style>
+            @font-face {
+                font-family: "PhantomSans";
+                src: url("https://hc-cdn.hel1.your-objectstorage.com/s/v3/62e8bc6dca4899591b634e2e82f909c3e102aa19_trial_phantomsans0.8-book-bf65a9d4d054b5b.ttf")
+                    format("truetype");
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #222222;
+                color: aliceblue;
+            }
+
+            * {
+                font-family: "PhantomSans", sans-serif;
+            }
+            #TopTopNav {
+                background-color: #4c4c4c;
+                margin: 25px;
+                padding: 30px;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 30px;
+                margin-bottom: 2.5;
+            }
+            #logo {
+                height: 100px;
+            }
+            #tabsTopNav {
+                background-color: #4c4c4c;
+                margin: 25px;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 30px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .pagesTabIntabsTopNavselected {
+                background-color: #222222;
+                border-radius: 30px;
+                padding: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .pagesTabIntabsTopNav {
+                background: none;
+                border-radius: 30px;
+                padding: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .pagesTabIntabsTopNavselected,
+            .pagesTabIntabsTopNav {
+                appearance: none;
+                border: none;
+                color: aliceblue;
+                cursor: pointer;
+            }
+
+            #leadreboardoftop3partyes {
+                background-color: #141414;
+                border-radius: 10px;
+                margin: 25px;
+            }
+
+            .placebox {
+                width: 150px;
+                height: 100%;
+                margin: 5px;
+                margin-top: 5px;
+                border-radius: 10px;
+                display: grid;
+                place-content: center;
+            }
+
+            .placedetails {
+                width: 150px;
+                margin: 5px;
+                margin-bottom: 0;
+                background-color: aliceblue;
+                border-radius: 10px;
+                height: 150px;
+            }
+
+            #place1,
+            #place2,
+            #place3 {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+            #place1box {
+                background-color: yellow;
+                height: 80px;
+            }
+
+            #place2box {
+                background-color: lightblue;
+                height: 100px;
+            }
+
+            #place3box {
+                background-color: lightgreen;
+                height: 60px;
+            }
+
+            #leadreboardoftop3partyeswrapper {
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .placebox p {
+                color: #141414;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="TopTopNav">
+            <img
+                id="logo"
+                src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0ebba62bf38e330f80b841a6dcefa47f3090b2f8_image.png"
+                alt="Hack Club Logo"
+            />
+            <div>THAE DIGRAM OF PARIMENT SEATS WILL COME HERE LATTER</div>
+        </div>
+        <div style="display: flex; justify-content: center">
+            <div id="tabsTopNav">
+                <button class="pagesTabIntabsTopNavselected">Parties</button>
+                <button class="pagesTabIntabsTopNav">Rules</button>
+            </div>
+        </div>
+        <div id="root">
+            <div id="leadreboardoftop3partyes">
+                <div id="leadreboardoftop3partyeswrapper">
+                    <div id="place1">
+                        <div id="place1details" class="placedetails"></div>
+                        <div id="place1box" class="placebox"><p style="text-align: center">
+                            <span style="font-size: larger">
+                                2<sup style="font-size: small">nd</sup>
+                            </span>
+                            <br />
+                            with {$} seats
+                        </p></div>
+                    </div>
+                    <div id="place2">
+                        <div id="place2details" class="placedetails"></div>
+                        <div id="place2box" class="placebox"><p style="text-align: center">
+                            <span style="font-size: larger">
+                                1<sup style="font-size: small">st</sup>
+                            </span>
+                            <br />
+                            with {$} seats
+                        </p></div>
+                    </div>
+                    <div id="place3">
+                        <div id="place3details" class="placedetails"></div>
+                        <div id="place3box" class="placebox">
+                            <p style="text-align: center">
+                                <span style="font-size: larger">
+                                    3<sup style="font-size: small">rd</sup>
+                                </span>
+                                <br />
+                                with {$} seats
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

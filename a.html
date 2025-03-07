@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parliament Diagram</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #tooltip {
+            position: absolute;
+            background: white;
+            border: 1px solid black;
+            padding: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <svg id="parliament" width="500" height="500"></svg>
+    <div id="tooltip"></div>
+    <script>
+        const svg = document.getElementById("parliament");
+        const tooltip = document.getElementById("tooltip");
+        const centerX = 250;
+        const centerY = 400;
+        const rows = 5;
+        const seatsPerRow = [8, 10, 12, 14, 16]; // Example seat count per row
+        const colors = ["red", "blue", "green", "orange", "purple"]; // Party colors
+        let seatIndex = 1;
+        seatsPerRow.forEach((seats, row) => {
+            const radius = 50 + row * 30; // Distance from center
+            const angleStep = Math.PI / seats; // Space out seats evenly
+            for (let i = 0; i < seats; i++) {
+                const angle = Math.PI - i * angleStep; // Spread in semicircle
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY - radius * Math.sin(angle);
+                const seat = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                seat.setAttribute("cx", x);
+                seat.setAttribute("cy", y);
+                seat.setAttribute("r", 10);
+                seat.setAttribute("fill", colors[row % colors.length]);
+                seat.setAttribute("stroke", "black");
+                seat.setAttribute("stroke-width", "1");
+                seat.addEventListener("mouseover", (event) => {
+                    tooltip.innerText = `Seat ${seatIndex}\nParty: ${colors[row % colors.length]}`;
+                    tooltip.style.left = event.pageX + 10 + "px";
+                    tooltip.style.top = event.pageY + 10 + "px";
+                    tooltip.style.display = "block";
+                });
+                seat.addEventListener("mouseout", () => {
+                    tooltip.style.display = "none";
+                });
+                svg.appendChild(seat);
+                seatIndex++;
+            }
+        });
+    </script>
+</body>
+</html>
