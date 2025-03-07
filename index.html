@@ -70,6 +70,9 @@
                 background-color: #141414;
                 border-radius: 10px;
                 margin: 25px;
+                display: flex;
+                justify-content: center;
+                padding: 20px;
             }
 
             .placebox {
@@ -114,14 +117,23 @@
                 height: 60px;
             }
 
-            #leadreboardoftop3partyeswrapper {
-                margin: 20px;
-                display: flex;
-                justify-content: center;
-            }
-
             .placebox p {
                 color: #141414;
+            }
+            .partyrow {
+                display: flex;
+                margin: 25px;
+                background-color: #141414;
+                padding: 10px;
+                border-radius: 20px;
+            }
+
+            .partylogo {
+                height: 100px;
+                width: 100px;
+                border-radius: 20px;
+                margin-right: 10px;
+                margin: 10px;
             }
         </style>
     </head>
@@ -142,38 +154,51 @@
         </div>
         <div id="root">
             <div id="leadreboardoftop3partyes">
-                <div id="leadreboardoftop3partyeswrapper">
-                    <div id="place1">
-                        <div id="place1details" class="placedetails"></div>
-                        <div id="place1box" class="placebox"><p style="text-align: center">
+                <div id="place1">
+                    <div id="place1details" class="placedetails"></div>
+                    <div id="place1box" class="placebox">
+                        <p style="text-align: center">
                             <span style="font-size: larger">
                                 2<sup style="font-size: small">nd</sup>
                             </span>
                             <br />
                             with [TBA] seats
-                        </p></div>
+                        </p>
                     </div>
-                    <div id="place2">
-                        <div id="place2details" class="placedetails"></div>
-                        <div id="place2box" class="placebox"><p style="text-align: center">
+                </div>
+                <div id="place2">
+                    <div id="place2details" class="placedetails"></div>
+                    <div id="place2box" class="placebox">
+                        <p style="text-align: center">
                             <span style="font-size: larger">
                                 1<sup style="font-size: small">st</sup>
                             </span>
                             <br />
                             with [TBA] seats
-                        </p></div>
+                        </p>
                     </div>
-                    <div id="place3">
-                        <div id="place3details" class="placedetails"></div>
-                        <div id="place3box" class="placebox">
-                            <p style="text-align: center">
-                                <span style="font-size: larger">
-                                    3<sup style="font-size: small">rd</sup>
-                                </span>
-                                <br />
-                                with [TBA] seats
-                            </p>
-                        </div>
+                </div>
+                <div id="place3">
+                    <div id="place3details" class="placedetails"></div>
+                    <div id="place3box" class="placebox">
+                        <p style="text-align: center">
+                            <span style="font-size: larger">
+                                3<sup style="font-size: small">rd</sup>
+                            </span>
+                            <br />
+                            with [TBA] seats
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="partyrow">
+                    <h1>4.</h1>
+                    <img class="partylogo" src="https://placehold.co/400" alt="Party Logo" />
+                    <div>
+                        <span style="font-size: 50px;"> Party Name</span>
+                        <br />"Party Tagline"
                     </div>
                 </div>
             </div>
