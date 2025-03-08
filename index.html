@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Parliament of Hack Club</title>
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
         <style>
             @font-face {
                 font-family: "PhantomSans";
@@ -13,128 +17,222 @@
             body {
                 margin: 0;
                 padding: 0;
-                background-color: #222222;
-                color: aliceblue;
+                background-color: #1a1a1a;
+                color: #ffffff;
+                transition: all 0.3s ease;
             }
 
             * {
                 font-family: "PhantomSans", sans-serif;
+                box-sizing: border-box;
             }
+
             #TopTopNav {
-                background-color: #4c4c4c;
+                background-color: #2d2d2d;
                 margin: 25px;
                 padding: 30px;
                 display: flex;
                 justify-content: space-between;
                 border-radius: 30px;
-                margin-bottom: 2.5;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease;
             }
+
+            #TopTopNav:hover {
+                transform: translateY(-2px);
+            }
+
             #logo {
                 height: 100px;
+                transition: transform 0.3s ease;
             }
+
+            #logo:hover {
+                transform: scale(1.05);
+            }
+
             #tabsTopNav {
-                background-color: #4c4c4c;
+                background-color: #2d2d2d;
                 margin: 25px;
-                padding: 10px;
+                padding: 15px;
                 display: flex;
-                justify-content: space-between;
+                gap: 10px;
+                justify-content: center;
                 border-radius: 30px;
                 margin-top: 0;
                 margin-bottom: 0;
             }
+
             .pagesTabIntabsTopNavselected {
-                background-color: #222222;
+                background-color: #ec3750;
                 border-radius: 30px;
-                padding: 5px;
-                padding-left: 15px;
-                padding-right: 15px;
+                padding: 12px 25px;
+                transition: all 0.3s ease;
             }
 
             .pagesTabIntabsTopNav {
                 background: none;
                 border-radius: 30px;
-                padding: 5px;
-                padding-left: 15px;
-                padding-right: 15px;
+                padding: 12px 25px;
+                transition: all 0.3s ease;
+            }
+
+            .pagesTabIntabsTopNav:hover {
+                background-color: rgba(236, 55, 80, 0.2);
             }
 
             .pagesTabIntabsTopNavselected,
             .pagesTabIntabsTopNav {
                 appearance: none;
                 border: none;
-                color: aliceblue;
+                color: #ffffff;
                 cursor: pointer;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
             }
 
             #leadreboardoftop3partyes {
-                background-color: #141414;
-                border-radius: 10px;
+                background-color: #2d2d2d;
+                border-radius: 20px;
                 margin: 25px;
                 display: flex;
                 justify-content: center;
-                padding: 20px;
-            }
-
-            .placebox {
-                width: 150px;
-                height: 100%;
-                margin: 5px;
-                margin-top: 5px;
-                border-radius: 10px;
-                display: grid;
-                place-content: center;
+                padding: 30px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                align-items: flex-end;
             }
 
             .placedetails {
-                width: 150px;
-                margin: 5px;
-                margin-bottom: 0;
-                background-color: aliceblue;
-                border-radius: 10px;
-                height: 150px;
+                width: 180px;
+                margin: 10px;
+                background-color: #2d2d2d;
+                border-radius: 15px;
+                height: 180px;
+                transition: transform 0.3s ease;
+                overflow: hidden;
+                padding: 15px;
+                color: white;
             }
 
-            #place1,
-            #place2,
-            #place3 {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
+            .placedetails:hover {
+                transform: translateY(-5px);
+            }
+
+            .placebox {
+                width: 180px;
+                height: 100%;
+                margin: 10px;
+                border-radius: 15px;
+                display: grid;
+                place-content: center;
+                transition: all 0.3s ease;
             }
 
             #place1box {
-                background-color: yellow;
+                background-color: #ffd700;
                 height: 80px;
             }
-
             #place2box {
-                background-color: lightblue;
+                background-color: #33a1fd;
                 height: 100px;
             }
-
             #place3box {
-                background-color: lightgreen;
+                background-color: #2ecc71;
                 height: 60px;
             }
 
             .placebox p {
-                color: #141414;
+                color: #1a1a1a;
+                font-weight: bold;
             }
+
             .partyrow {
                 display: flex;
                 margin: 25px;
-                background-color: #141414;
-                padding: 10px;
+                background-color: #2d2d2d;
+                padding: 20px;
                 border-radius: 20px;
-                place-content: space-between;
+                justify-content: space-between;
+                align-items: center;
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .partyrow:hover {
+                transform: translateX(5px);
             }
 
             .partylogo {
-                height: 100px;
-                width: 100px;
+                height: 120px;
+                width: 120px;
                 border-radius: 20px;
-                margin-right: 10px;
-                margin: 10px;
+                margin: 15px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .partylogo:hover {
+                transform: scale(1.05);
+            }
+
+            .party-info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .party-name {
+                font-size: 32px;
+                color: #ec3750;
+            }
+
+            .party-tagline {
+                font-style: italic;
+                color: #888;
+            }
+
+            .party-stats {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #888;
+            }
+
+            .seats-count {
+                text-align: center;
+                padding: 20px;
+                background-color: #ec3750;
+                border-radius: 15px;
+                color: white;
+            }
+
+            .tab-content {
+                display: none;
+            }
+
+            .tab-content.active {
+                display: block;
+            }
+
+            .top-party-info {
+                text-align: center;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .top-party-name {
+                color: #ec3750;
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+            .top-party-stats {
+                color: #888;
+                font-size: 14px;
             }
         </style>
     </head>
@@ -149,72 +247,219 @@
         </div>
         <div style="display: flex; justify-content: center">
             <div id="tabsTopNav">
-                <button class="pagesTabIntabsTopNavselected">Parties</button>
-                <button class="pagesTabIntabsTopNav">Rules</button>
+                <button class="pagesTabIntabsTopNavselected" data-tab="parties">
+                    <span class="material-icons">groups</span> Parties
+                </button>
+                <button class="pagesTabIntabsTopNav" data-tab="rules">
+                    <span class="material-icons">gavel</span> Rules
+                </button>
+                <button class="pagesTabIntabsTopNav" data-tab="statistics">
+                    <span class="material-icons">bar_chart</span> Statistics
+                </button>
             </div>
         </div>
         <div id="root">
-            <div id="leadreboardoftop3partyes">
-                <div id="place1">
-                    <div id="place1details" class="placedetails"></div>
-                    <div id="place1box" class="placebox">
-                        <p style="text-align: center">
-                            <span style="font-size: larger">
-                                2<sup style="font-size: small">nd</sup>
-                            </span>
-                            <br />
-                            with [TBA] seats
-                        </p>
+            <div id="parties" class="tab-content active">
+                <div id="leadreboardoftop3partyes">
+                    <div id="place1">
+                        <div id="place1details" class="placedetails">
+                            <div class="top-party-info">
+                                <div class="top-party-name">Hack Party</div>
+                                <div class="top-party-stats">
+                                    <span class="material-icons">person</span>
+                                    @zrl, @dinosaur<br />
+                                    <span class="material-icons">tag</span>
+                                    HackNation<br />
+                                    <span class="material-icons">favorite</span>
+                                    1.2K supporters
+                                </div>
+                            </div>
+                        </div>
+                        <div id="place1box" class="placebox">
+                            <p style="text-align: center">
+                                <span style="font-size: larger">
+                                    2<sup style="font-size: small">nd</sup>
+                                </span>
+                                <br />
+                                with [TBA] seats
+                            </p>
+                        </div>
+                    </div>
+                    <div id="place2">
+                        <div id="place2details" class="placedetails">
+                            <div class="top-party-info">
+                                <div class="top-party-name">
+                                    Innovation Party
+                                </div>
+                                <div class="top-party-stats">
+                                    <span class="material-icons">person</span>
+                                    @sampoder, @claire<br />
+                                    <span class="material-icons">tag</span>
+                                    InnovateHC<br />
+                                    <span class="material-icons">favorite</span>
+                                    980 supporters
+                                </div>
+                            </div>
+                        </div>
+                        <div id="place2box" class="placebox">
+                            <p style="text-align: center">
+                                <span style="font-size: larger">
+                                    1<sup style="font-size: small">st</sup>
+                                </span>
+                                <br />
+                                with [TBA] seats
+                            </p>
+                        </div>
+                    </div>
+                    <div id="place3">
+                        <div id="place3details" class="placedetails">
+                            <div class="top-party-info">
+                                <div class="top-party-name">Future Party</div>
+                                <div class="top-party-stats">
+                                    <span class="material-icons">person</span>
+                                    @future, @vision<br />
+                                    <span class="material-icons">tag</span>
+                                    FutureVision<br />
+                                    <span class="material-icons">favorite</span>
+                                    800 supporters
+                                </div>
+                            </div>
+                        </div>
+                        <div id="place3box" class="placebox">
+                            <p style="text-align: center">
+                                <span style="font-size: larger">
+                                    3<sup style="font-size: small">rd</sup>
+                                </span>
+                                <br />
+                                with [TBA] seats
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div id="place2">
-                    <div id="place2details" class="placedetails"></div>
-                    <div id="place2box" class="placebox">
-                        <p style="text-align: center">
-                            <span style="font-size: larger">
-                                1<sup style="font-size: small">st</sup>
-                            </span>
-                            <br />
-                            with [TBA] seats
-                        </p>
+
+                <div>
+                    <div class="partyrow">
+                        <div style="display: flex; align-items: center">
+                            <h1 style="margin: 0 20px">1</h1>
+                            <img
+                                class="partylogo"
+                                src="https://github.com/hackclub.png"
+                                alt="Hack Party Logo"
+                            />
+                            <div class="party-info">
+                                <span class="party-name">Hack Party</span>
+                                <span class="party-tagline"
+                                    >"Coding the Future of Democracy"</span
+                                >
+                                <div class="party-stats">
+                                    <span class="material-icons">person</span>
+                                    @zrl, @dinosaur
+                                    <span class="material-icons">tag</span>
+                                    HackNation
+                                    <span class="material-icons">favorite</span>
+                                    1.2K supporters
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seats-count">
+                            <span style="font-size: 32px">42</span>
+                            <br />Seats
+                        </div>
                     </div>
-                </div>
-                <div id="place3">
-                    <div id="place3details" class="placedetails"></div>
-                    <div id="place3box" class="placebox">
-                        <p style="text-align: center">
-                            <span style="font-size: larger">
-                                3<sup style="font-size: small">rd</sup>
-                            </span>
-                            <br />
-                            with [TBA] seats
-                        </p>
+
+                    <div class="partyrow">
+                        <div style="display: flex; align-items: center">
+                            <h1 style="margin: 0 20px">2</h1>
+                            <img
+                                class="partylogo"
+                                src="https://github.com/sampoder.png"
+                                alt="Innovation Party Logo"
+                            />
+                            <div class="party-info">
+                                <span class="party-name">Innovation Party</span>
+                                <span class="party-tagline"
+                                    >"Breaking Barriers, Building Future"</span
+                                >
+                                <div class="party-stats">
+                                    <span class="material-icons">person</span>
+                                    @sampoder, @claire
+                                    <span class="material-icons">tag</span>
+                                    InnovateHC
+                                    <span class="material-icons">favorite</span>
+                                    980 supporters
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seats-count">
+                            <span style="font-size: 32px">35</span>
+                            <br />Seats
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div>
-                <div class="partyrow">
-                    <div style="display: flex;">
-                        <h1>4.</h1>
-                        <img
-                            class="partylogo"
-                            src="https://placehold.co/400"
-                            alt="Party Logo"
-                        />
-                        <div>
-                            <span style="font-size: 50px"> Party Name</span>
-                            <br />"Party Tagline"
-                            <br> @Candidate @candidate2
-                            <br> #Chanle Name, [TBA] suporters
+            <div id="rules" class="tab-content">
+                <div style="padding: 25px">
+                    <h2>
+                        <span class="material-icons">new_releases</span> Latest
+                        Updates
+                    </h2>
+                    <div class="partyrow">
+                        <div style="padding: 20px">
+                            <h3>New Parliament Session Announced</h3>
+                            <p>
+                                The next session will begin on December 1st,
+                                2023. All parties must register their
+                                representatives by November 15th.
+                            </p>
                         </div>
                     </div>
-                    <div>
-                        <span style="font-size: 25px"> [TBA]</span>
-                        <br />Seats
+                    <div class="partyrow">
+                        <div style="padding: 20px">
+                            <h3>Updated Voting Procedures</h3>
+                            <p>
+                                Electronic voting system will be implemented for
+                                all future parliamentary decisions. Training
+                                sessions will be held next week.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            // Tab switching functionality
+            document
+                .querySelectorAll("#tabsTopNav button")
+                .forEach((button) => {
+                    button.addEventListener("click", () => {
+                        // Remove selected class from all buttons
+                        document
+                            .querySelectorAll("#tabsTopNav button")
+                            .forEach((btn) => {
+                                btn.classList.remove(
+                                    "pagesTabIntabsTopNavselected"
+                                );
+                            });
+
+                        // Add selected class to clicked button
+                        button.classList.add("pagesTabIntabsTopNavselected");
+
+                        // Hide all tab contents
+                        document
+                            .querySelectorAll(".tab-content")
+                            .forEach((content) => {
+                                content.classList.remove("active");
+                            });
+
+                        // Show selected tab content
+                        const tabName = button.getAttribute("data-tab");
+                        document
+                            .getElementById(tabName)
+                            .classList.add("active");
+                    });
+                });
+        </script>
     </body>
 </html>
