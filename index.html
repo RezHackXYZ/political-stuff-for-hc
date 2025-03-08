@@ -17,8 +17,8 @@
             body {
                 margin: 0;
                 padding: 0;
-                background-color: #1a1a1a;
-                color: #ffffff;
+                background-color: var(--bg-color);
+                color: var(--text-color);
                 transition: all 0.3s ease;
             }
 
@@ -28,7 +28,7 @@
             }
 
             #TopTopNav {
-                background-color: #2d2d2d;
+                background-color: var(--nav-bg);
                 margin: 25px;
                 padding: 30px;
                 display: flex;
@@ -52,7 +52,7 @@
             }
 
             #tabsTopNav {
-                background-color: #2d2d2d;
+                background-color: var(--nav-bg);
                 margin: 25px;
                 padding: 15px;
                 display: flex;
@@ -68,6 +68,7 @@
                 border-radius: 30px;
                 padding: 12px 25px;
                 transition: all 0.3s ease;
+                color: white !important;
             }
 
             .pagesTabIntabsTopNav {
@@ -94,42 +95,41 @@
             }
 
             #leadreboardoftop3partyes {
-                background-color: #2d2d2d;
+                background-color: var(--nav-bg);
                 border-radius: 20px;
                 margin: 25px;
                 display: flex;
                 justify-content: center;
-                padding: 30px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                padding: 40px;
+                gap: 40px;
                 align-items: flex-end;
             }
 
             .placedetails {
-                width: 180px;
-                margin: 10px;
-                background-color: #2d2d2d;
+                width: 280px;
+                background-color: var(--card-bg);
                 border-radius: 15px;
-                height: 180px;
-                transition: transform 0.3s ease;
-                overflow: hidden;
-                padding: 15px;
-                color: white;
+                height: 280px;
+                padding: 25px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
             }
 
             .placedetails:hover {
-                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             }
 
             .placebox {
-                width: 180px;
+                width: 280px;
                 height: 100%;
                 margin: 10px;
+                margin-bottom: 0;
                 border-radius: 15px;
                 display: grid;
                 place-content: center;
                 transition: all 0.3s ease;
             }
-
             #place1box {
                 background-color: #ffd700;
                 height: 80px;
@@ -151,7 +151,7 @@
             .partyrow {
                 display: flex;
                 margin: 25px;
-                background-color: #2d2d2d;
+                background-color: var(--nav-bg);
                 padding: 20px;
                 border-radius: 20px;
                 justify-content: space-between;
@@ -221,57 +221,258 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                gap: 10px;
             }
 
             .top-party-name {
                 color: #ec3750;
-                font-size: 20px;
-                margin-bottom: 8px;
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 15px;
             }
 
             .top-party-stats {
                 color: #888;
                 font-size: 14px;
             }
+
+            .material-icons {
+                vertical-align: middle;
+                font-size: 20px;
+                margin-right: 4px;
+            }
+
+            .constitution-section {
+                background-color: var(--nav-bg);
+                border-radius: 20px;
+                margin: 25px;
+                padding: 30px;
+            }
+
+            .constitution-article {
+                margin-bottom: 20px;
+                padding: 20px;
+                background-color: var(--card-bg);
+                border-radius: 15px;
+            }
+
+            .constitution-article h3 {
+                color: #ec3750;
+                margin-top: 0;
+            }
+
+            .top-party-tagline {
+                color: #888;
+                font-style: italic;
+                font-size: 14px;
+            }
+
+            #place1,
+            #place2,
+            #place3 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 200px;
+                transform-origin: bottom;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .places {
+                margin: 25px;
+            }
+
+            #place1:hover,
+            #place2:hover,
+            #place3:hover {
+                transform: translateY(-10px);
+            }
+
+            .tab-system {
+                position: relative;
+                margin: 25px;
+                display: flex;
+                justify-content: center;
+            }
+
+            #tabsTopNav {
+                background: var(--nav-bg);
+                border-radius: 30px;
+                padding: 5px;
+                display: inline-flex;
+                position: relative;
+                z-index: 1;
+            }
+
+            .tab-indicator {
+                position: absolute;
+                height: calc(100% - 10px);
+                border-radius: 25px;
+                background: #ec3750;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 0;
+            }
+
+            .pagesTabIntabsTopNav,
+            .pagesTabIntabsTopNavselected {
+                position: relative;
+                z-index: 2;
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+
+            .party-stats span {
+                margin-right: 5px;
+            }
+
+            .party-stats .symbol {
+                display: inline-block;
+                width: 20px;
+                text-align: center;
+                margin-right: 8px;
+            }
+
+            .theme-toggle {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: var(--nav-bg);
+                border: 1px solid var(--text-color);
+                border-radius: 20px;
+                padding: 8px 16px;
+                color: var(--text-color);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+                z-index: 1000;
+            }
+
+            .theme-toggle:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Dark/Light theme variables */
+            :root {
+                --bg-color: #1a1a1a;
+                --text-color: #ffffff;
+                --nav-bg: #2d2d2d;
+                --card-bg: #3d3d3d;
+            }
+
+            [data-theme="light"] {
+                --bg-color: #f5f5f5;
+                --text-color: #1a1a1a;
+                --nav-bg: #ffffff;
+                --card-bg: #f0f0f0;
+            }
+
+            .pagesTabIntabsTopNav {
+                color: var(--text-color) !important;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                #leadreboardoftop3partyes {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .partyrow {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .party-stats {
+                    justify-content: center;
+                }
+            }
+            #container {
+                position: relative;
+            }
+
+            #tooltip {
+                position: fixed;
+                background: white;
+                border: 1px solid #ccc;
+                color: black;
+                border-radius: 4px;
+                padding: 8px;
+                display: none;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                font-size: 14px;
+                z-index: 100;
+                pointer-events: none;
+            }
+
+            .seat {
+                transition: transform 0.3s ease;
+                cursor: pointer;
+                transform-origin: center;
+                transform-box: fill-box;
+            }
+
+            .seat:hover {
+                transform: scale(1.5);
+                z-index: 10;
+            }
         </style>
     </head>
     <body>
+        <button class="theme-toggle">
+            <span class="material-icons">dark_mode</span>
+            Theme
+        </button>
         <div id="TopTopNav">
             <img
                 id="logo"
                 src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0ebba62bf38e330f80b841a6dcefa47f3090b2f8_image.png"
                 alt="Hack Club Logo"
             />
-            <div>THAE DIGRAM OF PARIMENT SEATS WILL COME HERE LATTER</div>
+            <div id="container">
+                <svg id="parliament"></svg>
+                <div id="tooltip"></div>
+            </div>
         </div>
         <div style="display: flex; justify-content: center">
-            <div id="tabsTopNav">
-                <button class="pagesTabIntabsTopNavselected" data-tab="parties">
-                    <span class="material-icons">groups</span> Parties
-                </button>
-                <button class="pagesTabIntabsTopNav" data-tab="rules">
-                    <span class="material-icons">gavel</span> Rules
-                </button>
-                <button class="pagesTabIntabsTopNav" data-tab="statistics">
-                    <span class="material-icons">bar_chart</span> Statistics
-                </button>
+            <div class="tab-system">
+                <div id="tabsTopNav">
+                    <button class="pagesTabIntabsTopNav" data-tab="parties">
+                        👥 Parties
+                    </button>
+                    <button class="pagesTabIntabsTopNav" data-tab="rules">
+                        📜 Constitution
+                    </button>
+                    <div class="tab-indicator"></div>
+                </div>
             </div>
         </div>
         <div id="root">
             <div id="parties" class="tab-content active">
                 <div id="leadreboardoftop3partyes">
-                    <div id="place1">
-                        <div id="place1details" class="placedetails">
+                    <div id="place1" class="places">
+                        <div class="placedetails">
                             <div class="top-party-info">
-                                <div class="top-party-name">Hack Party</div>
-                                <div class="top-party-stats">
-                                    <span class="material-icons">person</span>
-                                    @zrl, @dinosaur<br />
-                                    <span class="material-icons">tag</span>
-                                    HackNation<br />
-                                    <span class="material-icons">favorite</span>
-                                    1.2K supporters
+                                <div style="display: flex">
+                                    <img
+                                        src="https://github.com/hackclub.png"
+                                        class="partylogo"
+                                        style="margin: 0"
+                                    />
+                                    <div class="top-party-name">
+                                        Progress Coders
+                                    </div>
+                                </div>
+
+                                <div class="top-party-tagline">
+                                    "Code Today, Shape Tomorrow"
+                                </div>
+                                <div class="party-stats">
+                                    👤 @max, @alice<br />
+                                    #️⃣ #ProgressiveCode<br />
+                                    ❤️ 1.5K supporters
                                 </div>
                             </div>
                         </div>
@@ -281,23 +482,31 @@
                                     2<sup style="font-size: small">nd</sup>
                                 </span>
                                 <br />
-                                with [TBA] seats
+                                35 seats
                             </p>
                         </div>
                     </div>
-                    <div id="place2">
-                        <div id="place2details" class="placedetails">
+                    <div id="place2" class="places">
+                        <div class="placedetails">
                             <div class="top-party-info">
-                                <div class="top-party-name">
-                                    Innovation Party
+                                <div style="display: flex">
+                                    <img
+                                        src="https://github.com/sampoder.png"
+                                        class="partylogo"
+                                        style="margin: 0"
+                                    />
+
+                                    <div class="top-party-name">
+                                        Innovation Alliance
+                                    </div>
                                 </div>
-                                <div class="top-party-stats">
-                                    <span class="material-icons">person</span>
-                                    @sampoder, @claire<br />
-                                    <span class="material-icons">tag</span>
-                                    InnovateHC<br />
-                                    <span class="material-icons">favorite</span>
-                                    980 supporters
+                                <div class="top-party-tagline">
+                                    "Breaking Barriers, Building Future"
+                                </div>
+                                <div class="party-stats">
+                                    👤 @sampoder, @claire<br />
+                                    #️⃣ #InnovateHC<br />
+                                    ❤️ 1.2K supporters
                                 </div>
                             </div>
                         </div>
@@ -307,21 +516,31 @@
                                     1<sup style="font-size: small">st</sup>
                                 </span>
                                 <br />
-                                with [TBA] seats
+                                45 seats
                             </p>
                         </div>
                     </div>
-                    <div id="place3">
-                        <div id="place3details" class="placedetails">
+                    <div id="place3" class="places">
+                        <div class="placedetails">
                             <div class="top-party-info">
-                                <div class="top-party-name">Future Party</div>
-                                <div class="top-party-stats">
-                                    <span class="material-icons">person</span>
-                                    @future, @vision<br />
-                                    <span class="material-icons">tag</span>
-                                    FutureVision<br />
-                                    <span class="material-icons">favorite</span>
-                                    800 supporters
+                                <div style="display: flex">
+                                    <img
+                                        src="https://github.com/hackclub.png"
+                                        class="partylogo"
+                                        style="margin: 0"
+                                    />
+
+                                    <div class="top-party-name">
+                                        Tech Democrats
+                                    </div>
+                                </div>
+                                <div class="top-party-tagline">
+                                    "Technology for All"
+                                </div>
+                                <div class="party-stats">
+                                    👤 @sarah, @james<br />
+                                    #️⃣ #TechForAll<br />
+                                    ❤️ 950 supporters
                                 </div>
                             </div>
                         </div>
@@ -331,7 +550,7 @@
                                     3<sup style="font-size: small">rd</sup>
                                 </span>
                                 <br />
-                                with [TBA] seats
+                                28 seats
                             </p>
                         </div>
                     </div>
@@ -340,58 +559,56 @@
                 <div>
                     <div class="partyrow">
                         <div style="display: flex; align-items: center">
-                            <h1 style="margin: 0 20px">1</h1>
+                            <h1 style="margin: 0 20px">4</h1>
                             <img
                                 class="partylogo"
                                 src="https://github.com/hackclub.png"
-                                alt="Hack Party Logo"
+                                alt="Digital Freedom Party Logo"
                             />
                             <div class="party-info">
-                                <span class="party-name">Hack Party</span>
+                                <span class="party-name"
+                                    >Digital Freedom Party</span
+                                >
                                 <span class="party-tagline"
-                                    >"Coding the Future of Democracy"</span
+                                    >"Free Code, Free Future"</span
                                 >
                                 <div class="party-stats">
-                                    <span class="material-icons">person</span>
-                                    @zrl, @dinosaur
-                                    <span class="material-icons">tag</span>
-                                    HackNation
-                                    <span class="material-icons">favorite</span>
-                                    1.2K supporters
+                                    👤 @alex, @emma<br />
+                                    #️⃣ #DigitalFreedom<br />
+                                    ❤️ 850 supporters
                                 </div>
                             </div>
                         </div>
                         <div class="seats-count">
-                            <span style="font-size: 32px">42</span>
+                            <span style="font-size: 32px">22</span>
                             <br />Seats
                         </div>
                     </div>
 
                     <div class="partyrow">
                         <div style="display: flex; align-items: center">
-                            <h1 style="margin: 0 20px">2</h1>
+                            <h1 style="margin: 0 20px">5</h1>
                             <img
                                 class="partylogo"
                                 src="https://github.com/sampoder.png"
-                                alt="Innovation Party Logo"
+                                alt="Youth Tech Alliance Logo"
                             />
                             <div class="party-info">
-                                <span class="party-name">Innovation Party</span>
+                                <span class="party-name"
+                                    >Youth Tech Alliance</span
+                                >
                                 <span class="party-tagline"
-                                    >"Breaking Barriers, Building Future"</span
+                                    >"Empowering Young Innovators"</span
                                 >
                                 <div class="party-stats">
-                                    <span class="material-icons">person</span>
-                                    @sampoder, @claire
-                                    <span class="material-icons">tag</span>
-                                    InnovateHC
-                                    <span class="material-icons">favorite</span>
-                                    980 supporters
+                                    👤 @lucas, @maya<br />
+                                    #️⃣ #YouthTech<br />
+                                    ❤️ 780 supporters
                                 </div>
                             </div>
                         </div>
                         <div class="seats-count">
-                            <span style="font-size: 32px">35</span>
+                            <span style="font-size: 32px">20</span>
                             <br />Seats
                         </div>
                     </div>
@@ -399,67 +616,294 @@
             </div>
 
             <div id="rules" class="tab-content">
-                <div style="padding: 25px">
+                <div class="constitution-section">
                     <h2>
-                        <span class="material-icons">new_releases</span> Latest
-                        Updates
+                        <span class="material-icons">book</span> Constitution of
+                        the Hack Club Parliament
                     </h2>
-                    <div class="partyrow">
-                        <div style="padding: 20px">
-                            <h3>New Parliament Session Announced</h3>
-                            <p>
-                                The next session will begin on December 1st,
-                                2023. All parties must register their
-                                representatives by November 15th.
-                            </p>
-                        </div>
+
+                    <div class="constitution-article">
+                        <h3>Article I: Fundamental Rights</h3>
+                        <p>
+                            All members have the right to code, hack, and build.
+                            No discrimination shall be made based on programming
+                            language preferences or operating system choices.
+                        </p>
                     </div>
-                    <div class="partyrow">
-                        <div style="padding: 20px">
-                            <h3>Updated Voting Procedures</h3>
-                            <p>
-                                Electronic voting system will be implemented for
-                                all future parliamentary decisions. Training
-                                sessions will be held next week.
-                            </p>
-                        </div>
+
+                    <div class="constitution-article">
+                        <h3>Article II: Parliamentary Structure</h3>
+                        <p>
+                            The Parliament shall consist of elected
+                            representatives from various tech-focused parties,
+                            each serving to advance the cause of youth in
+                            technology.
+                        </p>
+                    </div>
+
+                    <div class="constitution-article">
+                        <h3>Article III: Voting Procedures</h3>
+                        <p>
+                            All votes shall be conducted through a secure
+                            blockchain-based system, ensuring transparency and
+                            immutability of electoral processes.
+                        </p>
+                    </div>
+
+                    <div class="constitution-article">
+                        <h3>Article IV: Term Limits</h3>
+                        <p>
+                            Parliamentary terms shall last six months, with
+                            elections held during major Hack Club events.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
         <script>
-            // Tab switching functionality
-            document
-                .querySelectorAll("#tabsTopNav button")
-                .forEach((button) => {
-                    button.addEventListener("click", () => {
-                        // Remove selected class from all buttons
-                        document
-                            .querySelectorAll("#tabsTopNav button")
-                            .forEach((btn) => {
-                                btn.classList.remove(
-                                    "pagesTabIntabsTopNavselected"
-                                );
-                            });
+            // Parliament configuration
+            const parties = [
+                {
+                    name: "Progressive Party",
+                    seats: 12,
+                    logoUrl: "https://placehold.co/24x24/ff4d4d/white.png",
+                },
+                {
+                    name: "Conservative Alliance",
+                    seats: 26,
+                    logoUrl: "https://placehold.co/24x24/4d79ff/white.png",
+                },
+                {
+                    name: "Green Coalition",
+                    seats: 16,
+                    logoUrl: "https://placehold.co/24x24/4dff4d/white.png",
+                },
+                {
+                    name: "Liberal Democrats",
+                    seats: 18,
+                    logoUrl: "https://placehold.co/24x24/ffcc4d/white.png",
+                },
+                {
+                    name: "Nationalist Group",
+                    seats: 15,
+                    logoUrl: "https://placehold.co/24x24/a64dff/white.png",
+                },
+                {
+                    name: "Workers Union",
+                    seats: 12,
+                    logoUrl: "https://placehold.co/24x24/ff4da6/white.png",
+                },
+                {
+                    name: "Independent",
+                    seats: 7,
+                    logoUrl: "https://placehold.co/24x24/aaaaaa/white.png",
+                },
+            ];
 
-                        // Add selected class to clicked button
-                        button.classList.add("pagesTabIntabsTopNavselected");
-
-                        // Hide all tab contents
-                        document
-                            .querySelectorAll(".tab-content")
-                            .forEach((content) => {
-                                content.classList.remove("active");
-                            });
-
-                        // Show selected tab content
-                        const tabName = button.getAttribute("data-tab");
-                        document
-                            .getElementById(tabName)
-                            .classList.add("active");
+            const svg = document.getElementById("parliament");
+        const tooltip = document.getElementById("tooltip");
+        
+        // SVG namespace for creating elements
+        const svgNS = "http://www.w3.org/2000/svg";
+        
+        // Set up diagram parameters
+        const seatSize = 24;
+        const seatRadius = seatSize / 2;
+        const seatSpacing = 4; // Space between seats
+        const effectiveSeatSize = seatSize + seatSpacing;
+        const maxRowCount = 10;
+        
+        // Calculate total seats
+        const totalSeats = parties.reduce((sum, party) => sum + party.seats, 0);
+        
+        // Distribute seats to fill semicircle evenly
+        function distributeSeats() {
+            // Calculate how many rows and seats per row
+            const rows = [];
+            let remainingSeats = totalSeats;
+            let maxWidthSeats = 0;
+            
+            for (let rowIndex = 0; rowIndex < maxRowCount && remainingSeats > 0; rowIndex++) {
+                const radius = effectiveSeatSize * (rowIndex + 2); // Start with a minimum radius
+                const rowCircumference = Math.PI * radius;
+                const maxPossibleSeats = Math.floor(rowCircumference / effectiveSeatSize);
+                
+                // Fill row as much as possible
+                const seatsInRow = Math.min(maxPossibleSeats, remainingSeats);
+                
+                if (seatsInRow > 0) {
+                    rows.push({
+                        rowIndex,
+                        radius,
+                        seatsCount: seatsInRow
                     });
+                    
+                    remainingSeats -= seatsInRow;
+                    maxWidthSeats = Math.max(maxWidthSeats, seatsInRow);
+                }
+            }
+            
+            return { rows, maxWidthSeats };
+        }
+        
+        // Place seats and calculate dimensions
+        function placeSeats() {
+            const { rows, maxWidthSeats } = distributeSeats();
+            let seatCount = 0;
+            let partyIndex = 0;
+            let seatsPlacedInParty = 0;
+            
+            // Calculate SVG dimensions based on the diagram
+            const maxRadius = rows.length > 0 ? rows[rows.length - 1].radius + seatRadius : 0;
+            const svgWidth = maxRadius * 2 + seatSize;
+            const svgHeight = maxRadius + seatSize;
+            
+            // Set SVG attributes with the calculated dimensions
+            svg.setAttribute("width", svgWidth);
+            svg.setAttribute("height", svgHeight);
+            svg.setAttribute("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
+            
+            // Calculate center point
+            const centerX = svgWidth / 2;
+            const centerY = svgHeight - seatRadius;
+            
+            // For each row
+            rows.forEach(row => {
+                const angleStep = Math.PI / (row.seatsCount - 1 || 1);
+                
+                // For each seat in row
+                for (let seatInRow = 0; seatInRow < row.seatsCount; seatInRow++) {
+                    // Find current party
+                    while (seatsPlacedInParty >= parties[partyIndex].seats) {
+                        partyIndex++;
+                        seatsPlacedInParty = 0;
+                    }
+                    
+                    const party = parties[partyIndex];
+                    
+                    // Calculate angle (distribute seats evenly across 180 degrees)
+                    let angle;
+                    if (row.seatsCount === 1) {
+                        angle = Math.PI / 2; // Place single seat at the top
+                    } else {
+                        angle = Math.PI * seatInRow / (row.seatsCount - 1);
+                    }
+                    
+                    // Calculate position
+                    const x = centerX + row.radius * Math.cos(angle);
+                    const y = centerY - row.radius * Math.sin(angle);
+                    
+                    // Create circle clip path
+                    const clipPathId = `clip-${seatCount}`;
+                    const clipPath = document.createElementNS(svgNS, "clipPath");
+                    clipPath.setAttribute("id", clipPathId);
+                    
+                    const clipCircle = document.createElementNS(svgNS, "circle");
+                    clipCircle.setAttribute("cx", x);
+                    clipCircle.setAttribute("cy", y);
+                    clipCircle.setAttribute("r", seatRadius);
+                    
+                    clipPath.appendChild(clipCircle);
+                    svg.appendChild(clipPath);
+                    
+                    // Create image (with circular clipping)
+                    const image = document.createElementNS(svgNS, "image");
+                    image.setAttribute("x", x - seatRadius);
+                    image.setAttribute("y", y - seatRadius);
+                    image.setAttribute("width", seatSize);
+                    image.setAttribute("height", seatSize);
+                    image.setAttribute("href", party.logoUrl);
+                    image.setAttribute("clip-path", `url(#${clipPathId})`);
+                    image.setAttribute("class", "seat");
+                    image.setAttribute("data-party", party.name);
+                    
+                    // Add mouse events with corrected tooltip positioning
+                    image.addEventListener("mousemove", (event) => {
+                        tooltip.innerText = party.name;
+                        tooltip.style.left = `${event.clientX + 10}px`;
+                        tooltip.style.top = `${event.clientY + 10}px`;
+                        tooltip.style.display = "block";
+                    });
+                    
+                    image.addEventListener("mouseout", () => {
+                        tooltip.style.display = "none";
+                    });
+                    
+                    svg.appendChild(image);
+                    
+                    seatCount++;
+                    seatsPlacedInParty++;
+                }
+            });
+            
+            return { width: svgWidth, height: svgHeight };
+        }
+        
+        // Initialize and get diagram dimensions
+        const dimensions = placeSeats();
+        
+        // Update container dimensions
+        document.getElementById('container').style.width = `${dimensions.width}px`;
+        document.getElementById('container').style.height = `${dimensions.height}px`;
+        </script>
+        <script>
+            // Fixed tab system
+            const tabs = document.querySelectorAll("#tabsTopNav button");
+            const indicator = document.querySelector(".tab-indicator");
+
+            function updateIndicator(element) {
+                requestAnimationFrame(() => {
+                    indicator.style.width = `${element.offsetWidth}px`;
+                    indicator.style.left = `${element.offsetLeft}px`;
                 });
+            }
+
+            function switchTab(tab) {
+                tabs.forEach((t) => {
+                    t.classList.remove("pagesTabIntabsTopNavselected");
+                    t.style.color = "#ffffff";
+                });
+
+                tab.classList.add("pagesTabIntabsTopNavselected");
+
+                document
+                    .querySelectorAll(".tab-content")
+                    .forEach((content) => content.classList.remove("active"));
+
+                const tabName = tab.getAttribute("data-tab");
+                document.getElementById(tabName).classList.add("active");
+
+                updateIndicator(tab);
+            }
+
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", () => switchTab(tab));
+            });
+
+            // Initialize first tab
+            document
+                .querySelector('[data-tab="parties"]')
+                .classList.add("pagesTabIntabsTopNavselected");
+            updateIndicator(
+                document.querySelector(".pagesTabIntabsTopNavselected")
+            );
+
+            // Add theme toggle functionality
+            const themeToggle = document.querySelector(".theme-toggle");
+            themeToggle.addEventListener("click", () => {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    document.documentElement.getAttribute("data-theme") ===
+                        "light"
+                        ? "dark"
+                        : "light"
+                );
+                themeToggle.querySelector(".material-icons").textContent =
+                    document.documentElement.getAttribute("data-theme") ===
+                    "light"
+                        ? "light_mode"
+                        : "dark_mode";
+            });
         </script>
     </body>
 </html>
