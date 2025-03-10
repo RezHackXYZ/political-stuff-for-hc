@@ -103,4 +103,16 @@ let data = {
             ],
         },
     },
+    Brand: [
+        {
+            name: "Hack Club Logo",
+            svg: "https://assets.hackclub.com/icon-rounded.svg",
+            png: "https://assets.hackclub.com/icon-rounded.png",
+        },
+        {
+            name: "Parliament Logo",
+            svg: "https://assets.hackclub.com/flag-orpheus-top.svg",
+            png: "https://assets.hackclub.com/flag-orpheus-top.png",
+        },
+    ],
 };

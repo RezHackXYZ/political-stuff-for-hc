@@ -439,6 +439,80 @@
                 transform: scale(1.5);
                 z-index: 10;
             }
+
+            .brand-card {
+                background-color: var(--nav-bg);
+                border-radius: 15px;
+                padding: 20px;
+                margin: 15px;
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 20px;
+            }
+
+            .brand-preview {
+                width: 200px;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--card-bg);
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            .brand-preview svg {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .brand-controls {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .brand-name {
+                font-size: 24px;
+                color: var(--text-color);
+                margin-bottom: 15px;
+            }
+
+            .brand-button-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .brand-button {
+                background-color: var(--card-bg);
+                border: none;
+                border-radius: 8px;
+                padding: 10px;
+                color: var(--text-color);
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .brand-button:hover {
+                background-color: #ec3750;
+                color: white;
+            }
+
+            .copy-success {
+                color: #2ecc71;
+                font-size: 12px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .copy-success.show {
+                opacity: 1;
+            }
+
+            #brand {
+                padding: 20px;
+            }
         </style>
     </head>
     <body>
@@ -606,8 +680,10 @@
                     </div>
                 </div>
             </div>
-
             <div id="textTabs"></div>
+            <div id="brand" class="tab-content">
+                <!-- Brand cards will be dynamically inserted here -->
+            </div>
         </div>
         <script src="./data.js"></script>
         <script>
@@ -810,63 +886,6 @@
             document.getElementById(
                 "container"
             ).style.height = `${dimensions.height}px`;
-            // Fixed tab system
-            const tabs = document.querySelectorAll("#tabsTopNav button");
-            const indicator = document.querySelector(".tab-indicator");
-
-            function updateIndicator(element) {
-                requestAnimationFrame(() => {
-                    indicator.style.width = `${element.offsetWidth}px`;
-                    indicator.style.left = `${element.offsetLeft}px`;
-                });
-            }
-
-            function switchTab(tab) {
-                tabs.forEach((t) => {
-                    t.classList.remove("pagesTabIntabsTopNavselected");
-                    t.style.color = "#ffffff";
-                });
-
-                tab.classList.add("pagesTabIntabsTopNavselected");
-
-                document
-                    .querySelectorAll(".tab-content")
-                    .forEach((content) => content.classList.remove("active"));
-
-                const tabName = tab.getAttribute("data-tab");
-                document.getElementById(tabName).classList.add("active");
-
-                updateIndicator(tab);
-            }
-
-            tabs.forEach((tab) => {
-                tab.addEventListener("click", () => switchTab(tab));
-            });
-
-            // Initialize first tab
-            document
-                .querySelector('[data-tab="parties"]')
-                .classList.add("pagesTabIntabsTopNavselected");
-            updateIndicator(
-                document.querySelector(".pagesTabIntabsTopNavselected")
-            );
-
-            // Add theme toggle functionality
-            const themeToggle = document.querySelector(".theme-toggle");
-            themeToggle.addEventListener("click", () => {
-                document.documentElement.setAttribute(
-                    "data-theme",
-                    document.documentElement.getAttribute("data-theme") ===
-                        "light"
-                        ? "dark"
-                        : "light"
-                );
-                themeToggle.querySelector(".material-icons").textContent =
-                    document.documentElement.getAttribute("data-theme") ===
-                    "light"
-                        ? "light_mode"
-                        : "dark_mode";
-            });
         </script>
         <script>
             document.getElementById("logo").src = data.ParliamentLogo;
@@ -981,6 +1000,18 @@
             const tabsContainer = document.getElementById("tabsTopNav");
             const textTabsContainer = document.getElementById("textTabs");
 
+            // Create brand tab button first
+            const brandButton = document.createElement("button");
+            brandButton.className = "pagesTabIntabsTopNav";
+            brandButton.setAttribute("data-tab", "brand");
+            brandButton.innerHTML =
+                '<span class="material-icons">brush</span> Brand';
+            tabsContainer.insertBefore(
+                brandButton,
+                tabsContainer.lastElementChild
+            );
+
+            // Create text tabs
             Object.entries(data.TextTabs).forEach(([tabId, tabData]) => {
                 // Create tab button
                 const button = document.createElement("button");
@@ -1012,15 +1043,143 @@
                 textTabsContainer.appendChild(contentDiv);
             });
 
+            const indicator = document.querySelector(".tab-indicator");
+
+            function updateIndicator(element) {
+                requestAnimationFrame(() => {
+                    indicator.style.width = `${element.offsetWidth}px`;
+                    indicator.style.left = `${element.offsetLeft}px`;
+                });
+            }
+
+            function switchTab(tab) {
+                const tabs = document.querySelectorAll("#tabsTopNav button");
+                tabs.forEach((t) => {
+                    t.classList.remove("pagesTabIntabsTopNavselected");
+                    t.style.color = "#ffffff";
+                });
+
+                tab.classList.add("pagesTabIntabsTopNavselected");
+
+                document
+                    .querySelectorAll(".tab-content")
+                    .forEach((content) => content.classList.remove("active"));
+
+                const tabName = tab.getAttribute("data-tab");
+                document.getElementById(tabName).classList.add("active");
+
+                updateIndicator(tab);
+            }
+
             // Add click handlers to all tabs
             document.querySelectorAll("#tabsTopNav button").forEach((tab) => {
                 tab.addEventListener("click", () => switchTab(tab));
             });
 
             // Initialize the first tab
+            document
+                .querySelector('[data-tab="parties"]')
+                .classList.add("pagesTabIntabsTopNavselected");
             updateIndicator(
                 document.querySelector(".pagesTabIntabsTopNavselected")
             );
+
+            // Add theme toggle functionality
+            const themeToggle = document.querySelector(".theme-toggle");
+            themeToggle.addEventListener("click", () => {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    document.documentElement.getAttribute("data-theme") ===
+                        "light"
+                        ? "dark"
+                        : "light"
+                );
+                themeToggle.querySelector(".material-icons").textContent =
+                    document.documentElement.getAttribute("data-theme") ===
+                    "light"
+                        ? "light_mode"
+                        : "dark_mode";
+            });
+
+            // Create brand tab button
+
+            // Create brand content
+            const brandContainer = document.getElementById("brand");
+            data.Brand.forEach((brand) => {
+                const card = document.createElement("div");
+                card.className = "brand-card";
+
+                card.innerHTML = `
+                    <div class="brand-preview">
+                        <img src="${brand.svg}" alt="${brand.name}" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="brand-controls">
+                        <div class="brand-name">${brand.name}</div>
+                        <button class="brand-button copy-path-btn" style="margin-bottom: 10px;">Copy SVG Path</button>
+                        <div class="brand-button-grid">
+                            <button class="brand-button" onclick="window.open('${brand.svg}', '_blank')">Download SVG</button>
+                            <button class="brand-button" onclick="window.open('${brand.png}', '_blank')">Download PNG</button>
+                            <button class="brand-button copy-svg-btn">Copy SVG Image</button>
+                            <button class="brand-button copy-png-btn">Copy PNG Image</button>
+                        </div>
+                        <div class="copy-success">Copied!</div>
+                    </div>
+                `;
+
+                // Add copy functionality
+                const copyPath = card.querySelector(".copy-path-btn");
+                copyPath.addEventListener("click", async () => {
+                    try {
+                        const response = await fetch(brand.svg);
+                        const text = await response.text();
+                        await navigator.clipboard.writeText(text);
+                        showCopySuccess(copyPath);
+                    } catch (err) {
+                        console.error("Failed to copy:", err);
+                    }
+                });
+
+                const copySvg = card.querySelector(".copy-svg-btn");
+                copySvg.addEventListener("click", async () => {
+                    try {
+                        await copyImageToClipboard(brand.svg);
+                        showCopySuccess(copySvg);
+                    } catch (err) {
+                        console.error("Failed to copy image:", err);
+                    }
+                });
+
+                const copyPng = card.querySelector(".copy-png-btn");
+                copyPng.addEventListener("click", async () => {
+                    try {
+                        await copyImageToClipboard(brand.png);
+                        showCopySuccess(copyPng);
+                    } catch (err) {
+                        console.error("Failed to copy image:", err);
+                    }
+                });
+
+                brandContainer.appendChild(card);
+            });
+
+            function showCopySuccess(button) {
+                const successMsg = button
+                    .closest(".brand-controls")
+                    .querySelector(".copy-success");
+                successMsg.classList.add("show");
+                setTimeout(() => successMsg.classList.remove("show"), 2000);
+            }
+
+            async function copyImageToClipboard(url) {
+                try {
+                    const response = await fetch(url);
+                    const blob = await response.blob();
+                    const item = new ClipboardItem({ [blob.type]: blob });
+                    await navigator.clipboard.write([item]);
+                } catch (err) {
+                    console.error("Failed to copy image:", err);
+                }
+            }
         </script>
     </body>
 </html>
