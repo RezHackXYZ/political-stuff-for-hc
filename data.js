@@ -1,24 +1,3 @@
-/*
----------------------------- template --------------------------------
-
-ExampleName: {
-    Name: "", //name of the party
-    Logo: "", //url of the logo
-    Seats: 0, //number of seats (DON'T FILL ONLY FOR ASTRA)
-    BackgroundImage:
-        "", //(URL) it is an image because some idiots like ryan have multicolor flags/backgrounds
-    Tagline: "", //tagline of the party
-    candidates: {
-        "@NAME": "", //name of the candidate and the slack link
-        "@NAME": "", // you can add more candidates
-    },
-    channelName: "", //slack channel name (if none then set n/a)
-    channelLink: "", //slack channel link (if none set as "/" nothing else)
-    NoOfSupporters: "", //number of supporters
-}
-
-*/
-
 let data = {
     nameOfParliament: "Parliament of Hack Club",
     ParliamentLogo:
@@ -28,6 +7,7 @@ let data = {
             Name: "HCPP",
             Logo: "https://cdn.hack.pet/U07E6R26ZC0/HCPPLogo.png",
             Seats: 16,
+            BackgroundImage: "https://cdn.hack.pet/U07E6R26ZC0/HCPPBlue.png",
             Tagline: "Woof, meow, quack, together we rule the Slack!",
             candidates: {
                 "@Ilwân": "https://hackclub.slack.com/team/U07E6R26ZC0",
@@ -97,23 +77,30 @@ let data = {
             NoOfSupporters: "4",
         },
     },
-    TextOnlyTabs: {
-        "📜 Constitution": `<h2>
-                        <span class="material-icons">book</span> Constitution of
-                        the Hack Club Parliament
-                    </h2>
-
-                    <div class="constitution-article">
-                        <h3>1. rhythm made this website</h3>
-                        <p>
-                            and you must praise him for his amazing work
-                        </p>
-                    </div>
-                    <div class="constitution-article">
-                        <h3>2. Astra maintains this website</h3>
-                        <p>
-                            she is the main #parliament organizer
-                        </p>
-                    </div>`,
+    TextTabs: {
+        constitution: {
+            icon: "book",
+            title: "Constitution",
+            content: [
+                {
+                    heading: "1. rhythm made this website",
+                    text: "and you must praise him for his amazing work",
+                },
+                {
+                    heading: "2. astra maintains this website",
+                    text: "she is the main #parliament organizer",
+                },
+            ],
+        },
+        rules: {
+            icon: "gavel",
+            title: "Rules",
+            content: [
+                {
+                    heading: "Rule 1",
+                    text: "Example rule text",
+                },
+            ],
+        },
     },
 };
