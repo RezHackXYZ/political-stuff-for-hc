@@ -150,14 +150,29 @@ let data = {
     },
     Brand: [
         {
-            name: "Hack Club Logo",
-            svg: "https://assets.hackclub.com/icon-rounded.svg",
-            png: "https://assets.hackclub.com/icon-rounded.png",
+            name: "Parliament Full Logo",
+            svg: "assets/parliament-full.svg",
+            png: "assets/parliament-full.png",
         },
         {
-            name: "Parliament Logo",
-            svg: "https://assets.hackclub.com/flag-orpheus-top.svg",
-            png: "https://assets.hackclub.com/flag-orpheus-top.png",
+            name: "Parliament Small Logo",
+            svg: "assets/parliament-small.svg",
+            png: "assets/parliament-small.png",
+        },
+        {
+            name: "Oversight (HCEC) Logo",
+            svg: "assets/hcec.svg",
+            png: "assets/hcec.png",
+        },
+        {
+            name: "Supreme Court Full Logo",
+            svg: "assets/court-full.svg",
+            png: "assets/court-full.png",
+        },
+        {
+            name: "Supreme Court Small Logo",
+            svg: "assets/court-small.svg",
+            png: "assets/court-small.png",
         },
     ],
 };
