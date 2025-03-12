@@ -2,7 +2,7 @@
 window.parliamentApp = {};
 
 // Remove this line as it's trying to access content that doesn't exist yet
-// document.getElementById("constitution").innerHTML = data.TextTabs.constitution;
+//document.getElementById("constitution").innerHTML = data.TextTabs.constitution;
 
 document.getElementById("logo").src = data.ParliamentLogo;
 document.title = data.nameOfParliament;

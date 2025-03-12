@@ -4,9 +4,9 @@ let data = {
         "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0ebba62bf38e330f80b841a6dcefa47f3090b2f8_image.png",
     Parties: {
         HCPP: {
-            Name: "HCPP",
+            Name: "Hack Club Pets Party (HCPP)",
             Logo: "https://cdn.hack.pet/U07E6R26ZC0/HCPPLogo.png",
-            Seats: 16,
+            Seats: 10,
             BackgroundImage: "https://cdn.hack.pet/U07E6R26ZC0/HCPPBlue.png",
             Tagline: "Woof, meow, quack, together we rule the Slack!",
             candidates: {
@@ -16,10 +16,10 @@ let data = {
             channelLink: "https://hackclub.slack.com/archives/C08FS47QT8A",
             NoOfSupporters: "16",
         },
-        ExampleName: {
-            Name: "Example Name 1",
+        HCP: {
+            Name: "Hack Club Communist Party (HCP)",
             Logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eeb1bd266f2c9268ecb0d8a5a959907d496da699_image.png",
-            Seats: 1,
+            Seats: 35,
             BackgroundImage:
                 "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6c89dc79b72572c7fc88eed56023e0ed17bc3a84_image.png",
             Tagline: "I am a stupid example guy",
@@ -31,10 +31,10 @@ let data = {
             channelLink: "https://example.com/",
             NoOfSupporters: "1",
         },
-        ExampleName2: {
-            Name: "Example Name 2",
+        hUWUp: {
+            Name: "Hack Club UwU Party (hUWUp)",
             Logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eeb1bd266f2c9268ecb0d8a5a959907d496da699_image.png",
-            Seats: 2,
+            Seats: 17,
             BackgroundImage:
                 "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6c89dc79b72572c7fc88eed56023e0ed17bc3a84_image.png",
             Tagline: "I am a stupid example guy",
@@ -46,10 +46,10 @@ let data = {
             channelLink: "https://example.com/",
             NoOfSupporters: "2",
         },
-        ExampleName3: {
-            Name: "Example Name 3",
+        HCB: {
+            Name: "Hack Club Bank (HCB)",
             Logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eeb1bd266f2c9268ecb0d8a5a959907d496da699_image.png",
-            Seats: 10,
+            Seats: 11,
             BackgroundImage:
                 "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6c89dc79b72572c7fc88eed56023e0ed17bc3a84_image.png",
             Tagline: "I am a stupid example guy",
@@ -61,10 +61,10 @@ let data = {
             channelLink: "https://example.com/",
             NoOfSupporters: "3",
         },
-        ExampleName4: {
-            Name: "Example Name 4",
+        RATPHCC: {
+            Name: "Rat Party / Hack Club Centrist Party Coalition (RATP/HCC)",
             Logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eeb1bd266f2c9268ecb0d8a5a959907d496da699_image.png",
-            Seats: 4,
+            Seats: 34,
             BackgroundImage:
                 "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6c89dc79b72572c7fc88eed56023e0ed17bc3a84_image.png",
             Tagline: "I am a stupid example guy",
@@ -75,6 +75,51 @@ let data = {
             channelName: "#Parliament",
             channelLink: "https://example.com/",
             NoOfSupporters: "4",
+        },
+        Ryan: {
+            Name: "Independent - Ryan",
+                Logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eeb1bd266f2c9268ecb0d8a5a959907d496da699_image.png",
+                Seats: 17,
+                BackgroundImage:
+            "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6c89dc79b72572c7fc88eed56023e0ed17bc3a84_image.png",
+                Tagline: "I am a stupid example guy",
+                candidates: {
+                "@StupidExample1": "https://example.com/",
+                    "@StupidExample2": "https://example.com/",
+            },
+            channelName: "#Parliament",
+                channelLink: "https://example.com/",
+                NoOfSupporters: "4",
+        },
+        HCIP: {
+            Name: "Hack Club Ice Cream Party",
+                Logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eeb1bd266f2c9268ecb0d8a5a959907d496da699_image.png",
+                Seats: 8,
+                BackgroundImage:
+            "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6c89dc79b72572c7fc88eed56023e0ed17bc3a84_image.png",
+                Tagline: "I am a stupid example guy",
+                candidates: {
+                "@StupidExample1": "https://example.com/",
+                    "@StupidExample2": "https://example.com/",
+            },
+            channelName: "#Parliament",
+                channelLink: "https://example.com/",
+                NoOfSupporters: "4",
+        },
+        SANSP: {
+            Name: "[Name Classified] (SANSP)",
+                Logo: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eeb1bd266f2c9268ecb0d8a5a959907d496da699_image.png",
+                Seats: 12,
+                BackgroundImage:
+            "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6c89dc79b72572c7fc88eed56023e0ed17bc3a84_image.png",
+                Tagline: "I am a stupid example guy",
+                candidates: {
+                "@StupidExample1": "https://example.com/",
+                    "@StupidExample2": "https://example.com/",
+            },
+            channelName: "#Parliament",
+                channelLink: "https://example.com/",
+                NoOfSupporters: "4",
         },
     },
     TextTabs: {
